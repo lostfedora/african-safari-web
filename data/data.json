@@ -1,0 +1,507 @@
+{
+  "brand": {
+    "name": "AFRICAN SAFARIS",
+    "tagline": "Premium Uganda Experiences",
+    "contact": {
+      "phone": "+256 700 123456",
+      "email": "info@africansafaris.ug",
+      "website": "https://www.africansafaris.ug",
+      "social": {
+        "facebook": "https://facebook.com/africansafarisug",
+        "instagram": "https://instagram.com/africansafarisug"
+      }
+    }
+  },
+  "destinations": [
+    {
+      "id": "qe-np",
+      "title": "Queen Elizabeth National Park",
+      "slug": "queen-elizabeth-national-park",
+      "type": "park",
+      "location": "Western Uganda",
+      "idealDuration": "3–5 days",
+      "rating": 4.9,
+      "price": "USD 1,200",
+      "featured": true,
+      "image": "https://i.pinimg.com/1200x/09/9f/84/099f8446081bda126be3beb798dec70f.jpg",
+      "gallery": [
+        "https://i.pinimg.com/736x/83/7b/74/837b7495ecb490593ad550da6a8dd718.jpg",
+        "https://i.pinimg.com/1200x/a1/90/73/a19073afa7102f1ebb1993d063e689fc.jpg",
+        "https://i.pinimg.com/736x/94/d9/33/94d9330b8d922bfd9bbd11328d4e2ebb.jpg"
+      ],
+      "overview": "Explore iconic savannahs, stunning crater lakes, and the Kazinga Channel teeming with hippos and birds. Famous for its rare tree-climbing lions and classic game drives.",
+      "activities": [
+        "Game drives",
+        "Boat cruise",
+        "Bird watching",
+        "Crater tour"
+      ],
+      "highlights": [
+        "Tree-climbing lions at Ishasha",
+        "Kasenyi plains game viewing",
+        "Kazinga Channel boat safari",
+        "Scenic crater lakes"
+      ],
+      "inclusions": [
+        "Park entry fees",
+        "Professional safari guide",
+        "4x4 safari vehicle",
+        "Accommodation & all meals"
+      ],
+      "exclusions": [
+        "International flights",
+        "Travel insurance",
+        "Gratuities/tips",
+        "Alcoholic beverages"
+      ],
+      "bestTime": "June–September & December–February (dry seasons; prime wildlife viewing)",
+      "goodFor": [
+        "Families",
+        "Wildlife lovers",
+        "Photography enthusiasts"
+      ]
+    },
+    {
+      "id": "bwindi",
+      "title": "Bwindi Impenetrable Forest",
+      "slug": "bwindi-impenetrable-forest",
+      "type": "wildlife",
+      "location": "Southwest Uganda",
+      "idealDuration": "2–3 days",
+      "rating": 4.8,
+      "price": "USD 1,500",
+      "featured": true,
+      "image": "https://i.pinimg.com/1200x/21/ff/75/21ff75545cb5c79fd53501b577298317.jpg",
+      "gallery": [
+        "https://i.pinimg.com/1200x/6d/f6/68/6df668d57a8a551db9948c09a74ecd0a.jpg",
+        "https://i.pinimg.com/1200x/38/10/4c/38104c1cca7880b9035efdaecdc3b4e5.jpg",
+        "https://i.pinimg.com/1200x/90/b5/33/90b533b8b872a131e9e4fd76be028c76.jpg"
+      ],
+      "overview": "A UNESCO World Heritage Site, Bwindi is the ultimate destination to see mountain gorillas in their pristine rainforest habitat.",
+      "activities": [
+        "Gorilla trekking",
+        "Guided forest walks",
+        "Community visits",
+        "Bird watching"
+      ],
+      "highlights": [
+        "Close encounters with mountain gorillas",
+        "Lush, ancient rainforest scenery",
+        "Diverse birdlife",
+        "Immersive cultural experiences"
+      ],
+      "inclusions": [
+        "Gorilla trekking permits",
+        "Trained ranger/guide",
+        "Comfortable accommodation & meals",
+        "Transfers to/from park"
+      ],
+      "exclusions": [
+        "Optional porter services",
+        "Personal hiking gear",
+        "Travel insurance",
+        "Tips and gratuities"
+      ],
+      "bestTime": "June–September & December–February (drier months with better trekking conditions)",
+      "goodFor": [
+        "Adventure seekers",
+        "Wildlife enthusiasts"
+      ],
+      "permitInfo": {
+        "required": true,
+        "note": "Permits are limited and non-refundable. Book at least 8–12 weeks in advance."
+      }
+    },
+    {
+      "id": "murchison",
+      "title": "Murchison Falls National Park",
+      "slug": "murchison-falls-national-park",
+      "type": "park",
+      "location": "Northwest Uganda",
+      "idealDuration": "4–6 days",
+      "rating": 4.7,
+      "price": "USD 1,400",
+      "image": "https://i.pinimg.com/1200x/ef/9d/2f/ef9d2f968a54013de8e196d8b78efae9.jpg",
+      "gallery": [
+        "https://i.pinimg.com/736x/ac/1d/46/ac1d46ddace6ef50b307c80586bc0ff4.jpg",
+        "https://i.pinimg.com/1200x/f0/d0/fb/f0d0fbc30ebcb557dba1a0ac6ce56e6c.jpg",
+        "https://i.pinimg.com/736x/26/3a/90/263a90d27665eb5a9493fb5e911121e2.jpg"
+      ],
+      "overview": "Witness where the Nile River squeezes through a 7-meter gorge and explodes into the powerful Murchison Falls, surrounded by rich wildlife in expansive savannahs.",
+      "activities": [
+        "Game drives",
+        "Boat cruise to the falls",
+        "Hiking to top of the falls",
+        "Bird watching"
+      ],
+      "highlights": [
+        "Thunderous Murchison Falls",
+        "Scenic Nile boat safari",
+        "Large game populations",
+        "Beautiful savannah sunsets"
+      ],
+      "inclusions": [
+        "Park entrance fees",
+        "Boat cruise tickets",
+        "Professional guide services",
+        "Accommodation and meals"
+      ],
+      "exclusions": [
+        "Air/land flights",
+        "Travel insurance",
+        "Tips and gratuities",
+        "Personal expenses"
+      ],
+      "bestTime": "December–February & June–September (dry seasons for easier wildlife spotting)",
+      "goodFor": [
+        "First-time safari visitors",
+        "Nature lovers",
+        "Photographers"
+      ]
+    },
+    {
+      "id": "bunyonyi",
+      "title": "Lake Bunyonyi",
+      "slug": "lake-bunyonyi",
+      "type": "lake",
+      "location": "Southwest Uganda",
+      "idealDuration": "2–3 days",
+      "rating": 4.6,
+      "price": "USD 800",
+      "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=800&fit=crop",
+      "gallery": [
+        "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200&h=800&fit=crop",
+        "https://images.unsplash.com/photo-1533636721434-0e2d61030955?w=1200&h=800&fit=crop",
+        "https://images.unsplash.com/photo-1536697246787-1f7ae568d89a?w=1200&h=800&fit=crop",
+        "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200&h=800&fit=crop",
+        "https://images.unsplash.com/photo-1520975916090-3105956dac38?w=1200&h=800&fit=crop"
+      ],
+      "overview": "A serene, island-dotted lake renowned for stunning sunsets, canoeing adventures, and peaceful retreats amid nature.",
+      "activities": [
+        "Canoeing",
+        "Island hopping",
+        "Birding",
+        "Cultural tours"
+      ],
+      "highlights": [
+        "29 picturesque islands",
+        "Mirror-like calm waters",
+        "Terraced hillsides",
+        "Starry night skies"
+      ],
+      "inclusions": [
+        "Accommodation",
+        "Breakfast",
+        "Canoe tours",
+        "Local guide"
+      ],
+      "exclusions": [
+        "Lunch and dinner (varies by lodge)",
+        "Alcoholic beverages",
+        "Tips and gratuities"
+      ],
+      "bestTime": "Year-round; evenings can be cool, so pack a light sweater",
+      "goodFor": [
+        "Honeymooners",
+        "Families",
+        "Relaxation seekers"
+      ]
+    },
+    {
+      "id": "kidepo",
+      "title": "Kidepo Valley National Park",
+      "slug": "kidepo-valley-national-park",
+      "type": "park",
+      "location": "Northeast Uganda",
+      "idealDuration": "5–7 days",
+      "rating": 4.8,
+      "price": "USD 1,600",
+      "image": "https://i.pinimg.com/1200x/c7/bb/ab/c7bbab7de6269f0eceafab2787005a9c.jpg",
+      "gallery": [
+        "https://i.pinimg.com/1200x/74/bd/69/74bd697d257ac0ed404f72c694bb2846.jpg",
+        "https://i.pinimg.com/1200x/95/f5/e2/95f5e2d9c7f840f7f59063bb4c7e3d9e.jpg"
+
+      ],
+      "overview": "Remote and raw wilderness marked by sweeping savannahs, unique species, and rich cultural encounters with the Karamojong people.",
+      "activities": [
+        "Game drives",
+        "Cultural visits",
+        "Nature walks",
+        "Photography"
+      ],
+      "highlights": [
+        "Untouched wilderness",
+        "High densities of wildlife",
+        "Stunning panoramic vistas",
+        "Authentic local culture"
+      ],
+      "inclusions": [
+        "Park fees",
+        "4x4 safari vehicle",
+        "Accommodation & meals",
+        "Professional guide"
+      ],
+      "exclusions": [
+        "Domestic and international flights",
+        "Travel insurance",
+        "Tips and gratuities",
+        "Alcoholic drinks"
+      ],
+      "bestTime": "September–March (drier season; roads can be rough, ideal for adventurous travellers)",
+      "goodFor": [
+        "Experienced safari-goers",
+        "Photographers",
+        "Culture seekers"
+      ]
+    },
+    {
+      "id": "sipi",
+      "title": "Sipi Falls & Mount Elgon",
+      "slug": "sipi-falls-mount-elgon",
+      "type": "adventure",
+      "location": "Eastern Uganda",
+      "idealDuration": "2–3 days",
+      "rating": 4.5,
+      "price": "USD 700",
+      "image": "https://i.pinimg.com/736x/7a/4f/04/7a4f04c63c94fbf473b965b39ad364ef.jpg",
+      "gallery": [
+        "https://i.pinimg.com/736x/6b/ce/a4/6bcea4661d33f58016dc98022cfb0d0e.jpg",
+        "https://i.pinimg.com/1200x/2c/88/b9/2c88b95d272d69cec2d31e7dee96efd9.jpg",
+        "https://i.pinimg.com/1200x/36/84/d6/3684d6eec141d14ce74006cf1f3a60d7.jpg"
+      ],
+      "overview": "Enjoy three cascading waterfalls, scenic hiking trails, coffee plantation tours, and panoramic views above the Karamoja plains.",
+      "activities": [
+        "Hiking",
+        "Optional abseiling",
+        "Coffee tours",
+        "Village cultural walks"
+      ],
+      "highlights": [
+        "Triple-cascade waterfalls",
+        "Coffee farm experiences",
+        "Panoramic mountain views",
+        "Fresh mountain air"
+      ],
+      "inclusions": [
+        "Local guide",
+        "Park and community entry fees",
+        "Accommodation",
+        "Breakfast"
+      ],
+      "exclusions": [
+        "Abseiling fees (optional)",
+        "Lunch and dinner",
+        "Tips"
+      ],
+      "bestTime": "Dry months December–March & June–August for safest trail conditions",
+      "goodFor": [
+        "Adventure enthusiasts",
+        "Couples",
+        "Weekend getaways"
+      ]
+    }
+  ],
+  "tours": [
+    {
+      "id": "tour-1",
+      "title": "Classic Gorilla Trekking Adventure",
+      "slug": "classic-gorilla-trekking-adventure",
+      "destinationId": "bwindi",
+      "description": "Embark on an unforgettable journey into Bwindi Impenetrable Forest to encounter majestic mountain gorillas in their natural habitat.",
+      "image": "https://i.pinimg.com/1200x/05/a9/db/05a9dbce70e07aad65712c10658f132a.jpg",
+      "duration": "3 days",
+      "groupSize": "8 people",
+      "difficulty": "Challenging",
+      "price": "USD 1,500",
+      "originalPrice": "USD 1,800",
+      "rating": 4.9,
+      "reviewCount": 127,
+      "category": "wildlife",
+      "featured": true,
+      "includes": [
+        "Gorilla permit",
+        "Expert guide",
+        "Accommodation",
+        "All meals",
+        "Transport"
+      ],
+      "highlights": [
+        "Gorilla tracking",
+        "Rainforest exploration",
+        "Bird watching",
+        "Cultural village visit"
+      ],
+      "dates": [
+        "2026-03-15",
+        "2026-04-10",
+        "2026-05-05"
+      ]
+    },
+    {
+      "id": "tour-2",
+      "title": "Big Five Safari Experience",
+      "slug": "big-five-safari-experience",
+      "destinationId": "qe-np",
+      "description": "Comprehensive wildlife safari through Queen Elizabeth and Murchison Falls National Parks.",
+      "image": "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=600&h=400&fit=crop",
+      "duration": "5 days",
+      "groupSize": "6 people",
+      "difficulty": "Easy",
+      "price": "USD 1,200",
+      "rating": 4.8,
+      "reviewCount": 89,
+      "category": "safari",
+      "featured": true,
+      "includes": [
+        "Game drives",
+        "Boat safari",
+        "Park fees",
+        "Luxury lodge",
+        "Professional guide"
+      ],
+      "highlights": [
+        "Tree-climbing lions",
+        "Kazinga Channel",
+        "Murchison Falls",
+        "Big Five wildlife"
+      ],
+      "dates": [
+        "2026-03-20",
+        "2026-04-15",
+        "2026-05-12"
+      ]
+    },
+    {
+      "id": "tour-3",
+      "title": "Nile River Adventure & White Water Rafting",
+      "slug": "nile-river-adventure-white-water-rafting",
+      "destinationId": "murchison",
+      "description": "Thrilling Grade 5 white water rafting on the Nile River combined with scenic beauty and diverse wildlife.",
+      "image": "https://i.pinimg.com/736x/9c/89/c7/9c89c746fc2e94870ad132e6de904fca.jpg",
+      "duration": "2 days",
+      "groupSize": "12 people",
+      "difficulty": "Moderate",
+      "price": "USD 350",
+      "rating": 4.7,
+      "reviewCount": 64,
+      "category": "adventure",
+      "includes": [
+        "Rafting equipment",
+        "Safety gear",
+        "Lunch",
+        "Transport",
+        "Guide"
+      ],
+      "highlights": [
+        "Exciting Grade 5 rapids",
+        "Nile River scenery",
+        "Safety briefings",
+        "Scenic photography stops"
+      ],
+      "dates": [
+        "2026-03-10",
+        "2026-03-25",
+        "2026-04-08"
+      ]
+    },
+    {
+      "id": "tour-4",
+      "title": "Cultural Heritage & Community Tour",
+      "slug": "cultural-heritage-community-tour",
+      "destinationId": "bunyonyi",
+      "description": "Immerse yourself in Uganda's rich cultural heritage with visits to local communities and historical sites.",
+      "image": "https://i.pinimg.com/736x/d0/ce/e0/d0cee0c973d5800de46d180673d18daa.jpg",
+      "duration": "4 days",
+      "groupSize": "10 people",
+      "difficulty": "Easy",
+      "price": "USD 800",
+      "rating": 4.6,
+      "reviewCount": 42,
+      "category": "cultural",
+      "includes": [
+        "Cultural experiences",
+        "Local guides",
+        "Accommodation",
+        "Meals",
+        "Community donations"
+      ],
+      "highlights": [
+        "Traditional dances",
+        "Local crafts",
+        "Community projects",
+        "Historical landmarks"
+      ],
+      "dates": [
+        "2026-03-18",
+        "2026-04-22",
+        "2026-05-16"
+      ]
+    },
+    {
+      "id": "tour-5",
+      "title": "Mount Rwenzori Hiking Expedition",
+      "slug": "mount-rwenzori-hiking-expedition",
+      "destinationId": "kidepo",
+      "description": "Challenge yourself with a guided expedition through the mystical Mountains of the Moon.",
+      "image": "https://i.pinimg.com/1200x/3e/5c/86/3e5c86da43b0a4d37c2d59d7e0c811bd.jpg",
+      "duration": "7 days",
+      "groupSize": "6 people",
+      "difficulty": "Challenging",
+      "price": "USD 2,100",
+      "rating": 4.9,
+      "reviewCount": 38,
+      "category": "adventure",
+      "includes": [
+        "Experienced mountain guide",
+        "Porters",
+        "Camping equipment",
+        "All meals",
+        "Park entrance fees"
+      ],
+      "highlights": [
+        "Breathtaking summit views",
+        "Unique alpine vegetation",
+        "Glacial lakes",
+        "Rare wildlife sightings"
+      ],
+      "dates": [
+        "2026-03-25",
+        "2026-04-20",
+        "2026-05-25"
+      ]
+    },
+    {
+      "id": "tour-6",
+      "title": "Bird Watcher's Paradise Tour",
+      "slug": "bird-watchers-paradise-tour",
+      "destinationId": "murchison",
+      "description": "A specialized tour for bird enthusiasts featuring Uganda's most diverse birding sites and species.",
+      "image": "https://i.pinimg.com/736x/fa/c6/f0/fac6f0ca5ad3b5a814615a4158ebb463.jpg",
+      "duration": "6 days",
+      "groupSize": "8 people",
+      "difficulty": "Moderate",
+      "price": "USD 1,400",
+      "rating": 4.8,
+      "reviewCount": 31,
+      "category": "wildlife",
+      "includes": [
+        "Expert bird guide",
+        "Binoculars",
+        "Field guidebook",
+        "Accommodation",
+        "All meals"
+      ],
+      "highlights": [
+        "Over 1,000 bird species",
+        "Rare bird sightings",
+        "Excellent photography opportunities",
+        "Guided expert commentary"
+      ],
+      "dates": [
+        "2026-03-12",
+        "2026-04-18",
+        "2026-05-14"
+      ]
+    }
+  ]
+}
