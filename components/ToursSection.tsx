@@ -33,7 +33,6 @@ type Tour = {
   title: string;
   description: string;
   image: string;
-  gallery?: string[];
   duration: string;
   groupSize: string;
   difficulty: "Easy" | "Moderate" | "Challenging";
@@ -44,9 +43,11 @@ type Tour = {
   category: "safari" | "adventure" | "cultural" | "wildlife";
   featured?: boolean;
   includes: string[];
-  exclusions?: string[];
   highlights: string[];
   dates: string[];
+  slug?: string;
+  destinationId?: string;
+  exclusions?: string[];
   itinerary?: string[];
   meetingPoint?: string;
   cancellation?: string;
@@ -112,13 +113,13 @@ const getDifficultyColor = (difficulty: Tour["difficulty"]) => {
 const typePill = (cls: string) =>
   `px-3 py-1.5 rounded-full text-sm font-semibold border-2 backdrop-blur-sm inline-flex items-center gap-2 ${cls}`;
 
+// Fixed: Get gallery images - use main image since gallery doesn't exist in your data
 const getGalleryImages = (tour: Tour): string[] => {
-  return tour.gallery && tour.gallery.length > 0 ? tour.gallery : [tour.image];
+  return [tour.image]; // Just return the main image since there's no gallery
 };
 
 const getCurrentImage = (tour: Tour, imgIndex: number): string => {
-  const gallery = getGalleryImages(tour);
-  return gallery[imgIndex] || tour.image;
+  return tour.image; // Always return main image
 };
 
 /* ------------------------------------------------------------------ */
@@ -133,6 +134,12 @@ function TourCard({
 }) {
   const [isFavorite, setIsFavorite] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
+  const [imageError, setImageError] = useState(false);
+
+  const handleImageError = () => {
+    setImageError(true);
+    setImageLoaded(true);
+  };
 
   return (
     <div className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-200 hover:border-amber-400 hover:-translate-y-2">
@@ -167,16 +174,23 @@ function TourCard({
       {/* Image Section */}
       <div className="relative overflow-hidden">
         <div className="aspect-[4/3] overflow-hidden">
-          <img
-            src={tour.image}
-            alt={tour.title}
-            className={`w-full h-full object-cover transition-all duration-700 group-hover:scale-110 ${
-              imageLoaded ? "opacity-100" : "opacity-0"
-            }`}
-            loading="lazy"
-            onLoad={() => setImageLoaded(true)}
-          />
-          {!imageLoaded && (
+          {!imageError ? (
+            <img
+              src={tour.image}
+              alt={tour.title}
+              className={`w-full h-full object-cover transition-all duration-700 group-hover:scale-110 ${
+                imageLoaded ? "opacity-100" : "opacity-0"
+              }`}
+              loading="lazy"
+              onLoad={() => setImageLoaded(true)}
+              onError={handleImageError}
+            />
+          ) : (
+            <div className="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
+              <Compass className="h-12 w-12 text-gray-400" />
+            </div>
+          )}
+          {!imageLoaded && !imageError && (
             <div className="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 animate-pulse" />
           )}
         </div>
@@ -264,23 +278,15 @@ function TourModal({
 }) {
   const [imgIndex, setImgIndex] = useState(0);
   const [imageLoaded, setImageLoaded] = useState(false);
+  const [imageError, setImageError] = useState(false);
 
-  const getGalleryLength = (tour: Tour | null): number => {
-    if (!tour || !tour.gallery || tour.gallery.length === 0) return 1;
-    return tour.gallery.length;
+  const handleImageError = () => {
+    setImageError(true);
+    setImageLoaded(true);
   };
 
-  const next = () => {
-    if (!tour) return;
-    const galleryLength = getGalleryLength(tour);
-    setImgIndex((i) => (i + 1) % galleryLength);
-  };
-
-  const prev = () => {
-    if (!tour) return;
-    const galleryLength = getGalleryLength(tour);
-    setImgIndex((i) => (i - 1 + galleryLength) % galleryLength);
-  };
+  // Fixed: Since there's no gallery, only show single image
+  const hasMultipleImages = false; // Your data doesn't have galleries
 
   useEffect(() => {
     if (!tour) return;
@@ -289,8 +295,6 @@ function TourModal({
     document.body.style.overflow = "hidden";
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
-      if (e.key === "ArrowRight") next();
-      if (e.key === "ArrowLeft") prev();
     };
     window.addEventListener("keydown", onKey);
     return () => {
@@ -300,10 +304,6 @@ function TourModal({
   }, [tour, onClose]);
 
   if (!tour) return null;
-
-  const galleryImages = getGalleryImages(tour);
-  const galleryLength = getGalleryLength(tour);
-  const hasMultipleImages = galleryLength > 1;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
@@ -348,74 +348,32 @@ function TourModal({
             <div className="space-y-4 xl:sticky xl:top-0">
               <div className="relative rounded-2xl overflow-hidden bg-gray-100">
                 <div className="aspect-[4/3]">
-                  <img
-                    src={getCurrentImage(tour, imgIndex)}
-                    alt={`${tour.title} ${imgIndex + 1}`}
-                    className={`w-full h-full object-cover transition-opacity duration-300 ${
-                      imageLoaded ? "opacity-100" : "opacity-0"
-                    }`}
-                    loading="eager"
-                    onLoad={() => setImageLoaded(true)}
-                  />
-                  {!imageLoaded && (
+                  {!imageError ? (
+                    <img
+                      src={tour.image}
+                      alt={tour.title}
+                      className={`w-full h-full object-cover transition-opacity duration-300 ${
+                        imageLoaded ? "opacity-100" : "opacity-0"
+                      }`}
+                      loading="eager"
+                      onLoad={() => setImageLoaded(true)}
+                      onError={handleImageError}
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
+                      <Compass className="h-16 w-16 text-gray-400" />
+                      <div className="text-gray-500 text-sm mt-2">Image not available</div>
+                    </div>
+                  )}
+                  {!imageLoaded && !imageError && (
                     <div className="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 animate-pulse" />
                   )}
                 </div>
 
-                {/* Navigation Buttons */}
-                {hasMultipleImages && (
-                  <>
-                    <button
-                      onClick={prev}
-                      className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/95 hover:bg-white shadow-2xl backdrop-blur-sm transition-all duration-200 hover:scale-110"
-                      aria-label="Previous image"
-                    >
-                      <ChevronLeft className="h-5 w-5" />
-                    </button>
-                    <button
-                      onClick={next}
-                      className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/95 hover:bg-white shadow-2xl backdrop-blur-sm transition-all duration-200 hover:scale-110"
-                      aria-label="Next image"
-                    >
-                      <ChevronRight className="h-5 w-5" />
-                    </button>
-                  </>
-                )}
-
-                {/* Image Counter */}
-                {hasMultipleImages && (
-                  <div className="absolute bottom-4 right-4 bg-black/60 backdrop-blur-sm text-white px-3 py-1.5 rounded-full text-sm font-medium">
-                    {imgIndex + 1} / {galleryLength}
-                  </div>
-                )}
+                {/* Removed navigation buttons since no gallery */}
               </div>
 
-              {/* Thumbnail Strip */}
-              {hasMultipleImages && (
-                <div className="flex gap-3 overflow-x-auto pb-2">
-                  {galleryImages.slice(0, 5).map((src, i) => {
-                    const active = imgIndex === i;
-                    return (
-                      <button
-                        key={i}
-                        onClick={() => setImgIndex(i)}
-                        className={`flex-shrink-0 w-20 h-16 rounded-xl overflow-hidden border-2 transition-all duration-200 ${
-                          active
-                            ? "border-amber-500 ring-2 ring-amber-200"
-                            : "border-gray-200 hover:border-gray-300"
-                        }`}
-                      >
-                        <img
-                          src={src}
-                          alt=""
-                          className="w-full h-full object-cover"
-                          loading="lazy"
-                        />
-                      </button>
-                    );
-                  })}
-                </div>
-              )}
+              {/* Removed thumbnail strip since no gallery */}
             </div>
 
             {/* Scrollable Content */}
@@ -499,6 +457,8 @@ function TourModal({
                     {(tour.exclusions ?? [
                       "Personal expenses",
                       "Insurance",
+                      "International flights",
+                      "Tips and gratuities"
                     ]).map((x, i) => (
                       <li
                         key={i}
@@ -539,76 +499,6 @@ function TourModal({
                       </div>
                     ))}
                   </div>
-                </div>
-              )}
-
-              {/* Additional Information */}
-              {(tour.itinerary || tour.meetingPoint || tour.cancellation || tour.notes) && (
-                <div className="space-y-4">
-                  <h4 className="font-bold text-gray-900 text-xl">
-                    Additional Information
-                  </h4>
-
-                  {tour.itinerary && tour.itinerary.length > 0 && (
-                    <div className="bg-blue-50 rounded-2xl p-5 border border-blue-200">
-                      <h5 className="font-bold text-gray-900 mb-3 text-lg">
-                        Sample Itinerary
-                      </h5>
-                      <ol className="space-y-3">
-                        {tour.itinerary.slice(0, 4).map((step, i) => (
-                          <li
-                            key={i}
-                            className="flex items-start gap-3 text-gray-700 text-sm"
-                          >
-                            <span className="flex-shrink-0 w-6 h-6 bg-blue-500 text-white rounded-full text-xs flex items-center justify-center mt-0.5 font-bold">
-                              {i + 1}
-                            </span>
-                            <span>{step}</span>
-                          </li>
-                        ))}
-                      </ol>
-                    </div>
-                  )}
-
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-                    {tour.meetingPoint && (
-                      <div className="bg-white rounded-xl p-4 border border-gray-200">
-                        <h5 className="font-bold text-gray-900 mb-2 text-base">
-                          Meeting Point
-                        </h5>
-                        <p className="text-sm text-gray-700">
-                          {tour.meetingPoint}
-                        </p>
-                      </div>
-                    )}
-
-                    {tour.cancellation && (
-                      <div className="bg-white rounded-xl p-4 border border-gray-200">
-                        <h5 className="font-bold text-gray-900 mb-2 text-base">
-                          Cancellation Policy
-                        </h5>
-                        <p className="text-sm text-gray-700">
-                          {tour.cancellation}
-                        </p>
-                      </div>
-                    )}
-                  </div>
-
-                  {tour.notes && tour.notes.length > 0 && (
-                    <div className="bg-amber-50 rounded-2xl p-4 border border-amber-200">
-                      <h5 className="font-bold text-gray-900 mb-2 text-base flex items-center gap-2">
-                        <Info className="h-4 w-4 text-amber-600" />
-                        Important Notes
-                      </h5>
-                      <ul className="space-y-1">
-                        {tour.notes.slice(0, 3).map((n, i) => (
-                          <li key={i} className="text-sm text-amber-800">
-                            • {n}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
                 </div>
               )}
 
