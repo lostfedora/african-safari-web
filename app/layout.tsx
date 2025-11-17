@@ -33,7 +33,6 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${robotoMono.variable} antialiased bg-white font-sans`}
       >
-        <Navbar />
         <main className="min-h-screen">
           {children}
         </main>
